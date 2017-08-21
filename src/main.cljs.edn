@@ -1,0 +1,2 @@
+{:require     [deps-convert.core]
+ :boot-reload {:on-jsload deps-convert.core/on-reload}}

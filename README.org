@@ -1,0 +1,2 @@
+* Clojure Dependency Conversion
+Converts between Maven style dependency list the new clojure deps.edn file
