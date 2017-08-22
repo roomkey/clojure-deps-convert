@@ -5,15 +5,16 @@
                   [powerlaces/boot-figreload "LATEST" :scope "test"]
                   [pandeiro/boot-http "0.7.6" :scope "test"]
                   [org.clojure/tools.nrepl "0.2.12" :scope "test"]
-                  #_[adzerk/boot-cljs-repl "0.3.3" :scope "test"]
-                  #_[com.cemerick/piggieback "0.2.1"  :scope "test"]
-                  #_[weasel "0.7.0"  :scope "test"]]
+
+                  [adzerk/boot-cljs-repl   "0.3.3"] ;; latest release
+                  [com.cemerick/piggieback "0.2.1"  :scope "test"]
+                  [weasel                  "0.7.0"  :scope "test"]]
   :resource-paths #{"resources"}
   :source-paths #{"src"})
 
 (require
   '[adzerk.boot-cljs          :refer [cljs]]
-  ;;'[adzerk.boot-cljs-repl     :refer [cljs-repl]]
+  '[adzerk.boot-cljs-repl     :refer [cljs-repl]]
   '[powerlaces.boot-figreload :refer [reload]]
   '[pandeiro.boot-http        :refer [serve]])
 
@@ -23,7 +24,7 @@
     (serve)
     (watch)
     (reload)
-    #_(cljs-repl)
+    (cljs-repl)
     (cljs
       :source-map true
       :optimizations :none)))
