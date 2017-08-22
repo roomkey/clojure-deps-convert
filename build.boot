@@ -22,9 +22,9 @@
   '[pandeiro.boot-http        :refer [serve]])
 
 
-(deftask dev []
+(deftask dev [p port VAL int "port number to run server"]
   (comp
-    (serve)
+    (serve :port port)
     (watch)
     (reload)
     (cljs-repl)
