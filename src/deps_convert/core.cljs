@@ -34,7 +34,7 @@
 (defn pprinted-string [data]
   (with-out-str
     (z/zprint data 160 {:map {:justify? true
-                              :sort? false}})))
+                              :sort?    false}})))
 
 
 (defn convert-text [text-str]
