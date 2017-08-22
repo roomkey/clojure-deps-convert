@@ -1,6 +1,9 @@
 (set-env!
   :dependencies '[[org.clojure/clojure "1.9.0-alpha17" :scope "provided"]
                   [org.clojure/clojurescript "1.9.562"]
+                  [rum "0.10.8"]
+                  [zprint "0.4.2"]
+
                   [adzerk/boot-cljs "LATEST" :scope "test"]
                   [powerlaces/boot-figreload "LATEST" :scope "test"]
                   [pandeiro/boot-http "0.7.6" :scope "test"]

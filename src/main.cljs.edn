@@ -1,2 +1,3 @@
 {:require     [deps-convert.core]
+ :init-fns    [deps-convert.core/init!]
  :boot-reload {:on-jsload deps-convert.core/on-reload}}
