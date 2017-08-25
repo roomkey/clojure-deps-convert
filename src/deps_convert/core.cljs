@@ -2,7 +2,8 @@
   (:require [rum.core :as rum]
             [cljs.reader :as read]
             [clojure.pprint :as pprint]
-            [zprint.core :as z]))
+            [zprint.core :as z]
+            [linked.core :as linked]))
 
 (defonce parsing-error (atom nil))
 (defonce results (atom ""))
@@ -23,18 +24,17 @@
 
 
 (defn maven->clojure [input]
-  (into {}
-    (map (fn [[dep-name version & opt-seq]]
-           (let [opts (apply hash-map opt-seq)]
-             [dep-name  (-> opts
-                          (assoc :version version))])))
-    input))
+  (let [pairs (map (fn [[dep-name version & opt-seq]]
+                     (let [opts (apply hash-map opt-seq)]
+                       [dep-name (merge {:version version} opts)])) input)]
+    (into (linked/map) pairs)))
 
 
 (defn pprinted-string [data]
   (with-out-str
-    (z/zprint data 160 {:map {:justify? true
-                              :sort?    false}})))
+    (z/zprint data 100 {:map {:justify? false
+                              :sort?     false
+                              :comma?   false}})))
 
 
 (defn convert-text [text-str]

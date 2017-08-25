@@ -3,6 +3,7 @@
                   [org.clojure/clojurescript "1.9.562"]
                   [rum "0.10.8"]
                   [zprint "0.4.2"]
+                  [frankiesardo/linked "1.2.9"]
 
                   [adzerk/boot-cljs "LATEST" :scope "test"]
                   [powerlaces/boot-figreload "LATEST" :scope "test"]
