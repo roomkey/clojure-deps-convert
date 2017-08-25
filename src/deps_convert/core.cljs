@@ -56,7 +56,7 @@
       [:textarea
        {:id          input-box-id
         :rows        "50"
-        :cols        "120"
+        :cols        "100"
         :placeholder "Enter Dependencies here..."}]
 
       [:button {:type "submit"} "Convert"]]
@@ -66,7 +66,7 @@
       [:textarea
        {:readOnly true
         :rows     "50"
-        :cols     "120"
+        :cols     "100"
         :value    (rum/react results)}]]]))
 
 
