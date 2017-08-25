@@ -32,3 +32,16 @@
     (cljs
       :source-map true
       :optimizations :none)))
+
+
+(deftask build []
+  (comp
+    (cljs :optimizations :advanced)
+    (target :dir #{"docs"})))
+
+
+(deftask local-prod [p port PORT int "port to run on"]
+  (comp
+    (watch)
+    (build)
+    (serve :dir "docs" :port (or port 3000))))
